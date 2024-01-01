@@ -1,0 +1,125 @@
+<%- include('header.ejs') %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.png">
+  <title>Admin login</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: #4c86a3 !important;
+        }
+        #header{
+            background-color: #407690;
+            width: 100%;
+            height: 10%;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            letter-spacing: 2px;
+        }
+        h1{
+            margin: 0;
+            color: white;
+            margin-left: 1%;
+            text-transform: capitalize;
+            box-sizing: border-box;
+        }
+        #logout{
+            float: right;
+        }
+        #new-element{
+            margin-left: 30%  !important;
+            width: 40%;
+            background-color: #78aecb;
+            height: auto;
+            margin-top: 2%;
+            margin-left: 2%;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+        #new_device_text{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        #back-button{
+            background-color: #323650;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bolder;
+            border: 0px;
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 2%;
+            border-radius: 15px;
+        }
+        #back-button:hover {
+            background-color: rgb(255, 136, 0);
+        }
+        label{
+            font-size: 1vw;
+            text-transform: capitalize;
+        }
+        .newinfo {
+            border: 0;
+            padding-left: 1%;
+        }
+        #submit_button{
+            text-transform: capitalize;
+            width: 50%;
+            border: 0;
+            background-color: teal;
+            color: white;
+            font-size: 1.2vw;
+            font-weight: bolder;
+            margin-bottom: 2%;
+            border-radius: 5px;
+        }
+        #submit_button:hover{
+            background-color: rgb(21, 153, 153);
+        }
+        #messages {
+            width: 60%;
+            margin-left: 20%;
+            background-color:#78aecb;
+            min-height: 100px;
+            margin-top: 3%;
+            border-radius: 15px;
+            text-align: center;
+        }
+        #messages_text {
+            font-size: 1.5vw;
+            font-weight: bold;
+        }
+
+
+
+        
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.replace('/home')" id="back-button"><%= translated[language]["back"] %></button>
+<button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.replace('/adminlogout')" id="back-button"><%= translated[language]["logout"] %></button>
+    <div id="new-element">
+        <h1 id="new_device_text"><%= translated[language]["new_device"] %></h1>
+        <form action="/admin" method="POST" type="submit">
+            <label for="newdevicename"><%= translated[language]["device_id"] %></label>
+            <input class="newinfo" type="text" name="newdevicename" id="newusername" required> <br>
+            <label for="newdevicepassword"><%= translated[language]["password"] %></label>
+            <input class="newinfo" type="text" name="newdevicepassword" id="newpassword" required> <br>
+            <% if (error=="success_device_add") { %>
+                <br><h1 style="color: yellow; float: left; margin-left: 7%; text-transform: none; font-size: 1vw; "><%= translated[language][error] %></h1>
+            <% } %>
+            <input type="submit" id="submit_button" value="<%= translated[language]["add"] %>">
+        </form>
+    </div>
+    <div id="messages">
+        <h1 id="messages_text"><%= translated[language]["messages"] %></h1>
+        <h3><%= messages %></h3> 
+    </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: linear-gradient(to right, #205375, #78a5c4);
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 65px;
+      margin: 5px;
+    }
+
+    .wrapper form {
+      padding: 10px 30px 50px 30px;
+    }
+
+    form .field {
+      height: 50px;
+      width: 100%;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    form .field input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      font-size: 17px;
+      padding-left: 20px;
+      border: 1px solid lightgrey;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    form .field input:focus,
+    form .field input:valid {
+      border-color: #4158d0;
+    }
+
+    form .field label {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      color: #999999;
+      font-weight: 400;
+      font-size: 17px;
+      pointer-events: none;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+    }
+
+    form .field input:focus~label,
+    form .field input:valid~label {
+      top: 0%;
+      font-size: 16px;
+      color: #4158d0;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    form .field input[type="submit"] {
+      color: #fff;
+      border: none;
+      padding-left: 0;
+      margin-top: -10px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(-135deg, #c850c0, #4158d0);
+      transition: all 0.3s ease;
+    }
+
+    form .field input[type="submit"]:active {
+      transform: scale(0.95);
+    }
+
+    .second {
+      display: flex;
+      border-radius: 15px;
+    }
+
+    .messages {
+      width: 50%;
+    }
+
+    .first {
+      width: 50%;
+    }
+
+    .new_device {
+      width: 80%;
+      margin: 30px;
+      box-shadow: 10px 10px 5px #e0e0e0;
+      background-color: rgba(0, 0, 0, 0.16);
+      color: white;
+      padding: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 15px;
+
+    }
+    .messages {
+      width: 50%;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 10px 10px 5px #e0e0e0;
+      background-color: rgba(0, 0, 0, 0.16);
+      background-color: #adacac;
+      border-radius: 15px;
+
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 15px;
+    }
+
+    h2 {
+      text-shadow: 2px 2px #665763;
+      color: white;
+      font-weight: 300;
+      text-align: center;
+      font-family: "Lucida Console", "Courier New", monospace;
+
+    }
+
+    input {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 15px;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      outline: none;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 30px;
+      margin: 10px;
+      margin-top: 5px;
+    }
+
+    #login-form {
+      padding: 20px 60px;
+    }
+
+    .btn1 {
+      transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+      background-color: hsla(144°, 27%, 63%, 0.664);
+      border: 2px solid #111;
+    }
+
+    .btn1 {
+      display: flex;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .btn1:hover {
+      border: 2px solid #111;
+      box-shadow: 0px 0px 26px 8px hsla(144°, 27%, 63%, 0.664);
+      background-color: #78a5c4;
+    }
+
+    .btn1:hover {
+      color: hsla(144°, 27%, 63%, 0.664);
+    }
+
+    .new {
+      color: white;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #dddddd;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #edeef1;
+    }
+    html {
+      scrollbar-width: normal;
+      scrollbar-color: #777 #555;
+    }
+
+    html::-webkit-scrollbar {
+      width: 1vw;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background-color: #7775;
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+      background-color: #fff;
+    }
+
+    html::-webkit-scrollbar-track {
+      background-color: #5555;
+    }
+
+    html::-webkit-scrollbar-track:hover {
+      background-color: #7775;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="back icon">
+      <a href="/home"><img id="pict" src="images/back.png" width="65px" alt=""></a>
+    </div>
+    <div class="logout icon">
+      <a href="/adminlogout"><img id="pict" src="images/logout.png" alt=""></a>
+    </div>
+  </div>
+  <div class="second">
+    <div class="first">
+      <div class="new_device">
+        <h2 style="text-transform: capitalize;"><%= translated[language]["new_device"] %></h2>
+        <div id="login-form">   
+          <form action="/admin" method="POST" type="submit">
+            <input placeholder="<%= translated[language]["device_id"] %>"  type="text"  name="newdevicename" id="newusername"  required class="form form-control mt-2 email">
+            <input placeholder="<%= translated[language]["password"] %>"  type="text" name="newdevicepassword" id="newpassword" class="form form-control mt-2 password">
+            <% if (error=="success_device_add") { %>
+                <br><h1 style="color: yellow; float: left; margin-left: 7%; text-transform: none; font-size: 1vw; "><%= translated[language][error] %></h1>
+            <% } %>
+            <button class="btn btn1 save" style="text-transform: capitalize; margin: auto;" name="login"><%= translated[language]["add"] %></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="messages">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <% for(const [key, value] of Object.entries(messages)){  %>
+        <tbody>
+          <tr>
+            <td><%= key %></td>
+            <td><%= messages[key]["surname"] %></td>
+            <td><%= messages[key]["email"] %></td>
+            <td><%= messages[key]["phone"] %></td>
+            <th><%= messages[key]["message"] %></th>
+          </tr>
+        </tbody>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

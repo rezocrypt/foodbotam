@@ -1,0 +1,523 @@
+<%- include('header.ejs') %>
+  <style>
+    body{
+      background-color: rgb(255, 255, 255);
+    }
+  #navbar-devicecontrol-text {  
+    color: #00adb5 !important;
+  }
+  #edit-container{
+    background-color: orange;
+    border: 0;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  #edit-container:hover{
+    background-color: orangered;
+    border: 0;
+  }
+  #back_step:hover{
+    background-color: orangered !important;
+  }
+  #order_sandwich:hover{
+    background-color: #17a008 !important;
+  }
+  #order_for_later:hover{
+    background-color: rgb(185, 0, 145);
+  }
+ 
+  .container-image {
+    height: 100%;
+    margin-left: 0%;
+    display: table-cell;
+    float: left;
+  }
+
+
+  .container-div:hover{
+    height: 20vh; 
+    background-color: green;
+    cursor: pointer;
+  }
+  #elements-place{
+    width: 30vw;
+    height: auto;
+    background-color: gray;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+  }
+.container-text {
+  display: flex;
+}
+
+
+
+
+
+
+
+.containerContent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding: 4vw;
+  padding-bottom: 400px;
+}
+.containerWrapper{
+  background: goldenrod;
+  width: 20.5vw;
+  height: 10vw;
+  margin-bottom: 2.666vw;
+  border-radius: 15px;
+  transition: all .3s;
+}
+.containerItem {
+  display: flex;
+}
+.containerImage {
+  width: 50%; 
+  padding: 5px;
+}
+.containerImage  img{
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-name{
+    float: right;
+    color: white;
+    font-weight: bolder;
+    font-size: calc(18px + .5vw);
+    text-transform: capitalize;
+    vertical-align: bottom;
+  }
+  .container-number{
+    float: right;
+    font-size: 1vw;
+    color: white;
+    vertical-align: bottom;
+  }
+.showSandwich {
+  display: none;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  height: 3vw;
+
+}
+@media only screen and (min-width: 600px) {
+.containerWrapper:hover{
+  background: green;
+  height: 13vw
+}
+.containerWrapper:hover .showSandwich{
+  display: block !important;
+  color: white
+}
+}
+
+
+#back-step{
+  width: 10%;
+  font-size: 5vw !important;
+}
+
+.defaultElement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  width: 92vw;
+  margin-bottom: 50px;
+}
+.default_sandwiches{
+    background: goldenrod;
+    width: 20.5vw;
+    height: 100px;
+    border: 0;
+    padding: 5px;
+    text-transform: capitalize;
+    white-space: break-spaces;
+    margin-bottom: 2.666vw;
+    border-radius: 15px;
+    color: white;
+    font-size: calc(14px + .3vw);
+    margin: 0;
+    transition: 0.3s;
+}
+.command-buttons{
+  width: 200px;
+  height: 50px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin: 0;
+  border: 0;
+  margin-right: 15px;
+  background-color: #0080ff;
+  color:white
+}
+.default_sandwiches:hover{
+    background-color: green;
+}
+@media only screen and (max-width: 1000px) {
+   #elements-place{
+            width: 60vw;
+  }
+  #element-picture{
+    width: 60vw;
+    height: 40vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .containerWrapper{
+    width: 44vw;
+    height: auto;
+    margin-bottom: 4vw;
+    border-radius: 15px;
+    transition: all .3s;
+  }
+  .showSandwich {
+    display: block;
+    font-size: 12px;
+    height: 50px;
+  }
+  .containerImage {
+  width: 40%; 
+}
+.containerInfo {
+  width: 60%;
+}
+.container-name{
+    font-size: calc(16px + .5vw);
+  }
+  .container-number{
+    font-size: calc(12px + .5vw);
+  }
+  .defaultElement{
+    margin-top: 10vw
+  }
+  .default_sandwiches{
+    width: 44vw;
+    margin-bottom: 4vw;
+}
+.step {  
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+  justify-content: space-between;
+}
+.command-buttons{
+  width: 48%;
+  height: 50px;
+  font-size: 14px;
+  margin: 0;
+}
+.command-buttons {
+  background-color: #0080ff !important;
+}
+#elements-place img {
+  /*height: 100px !important;*/
+}
+}
+#element-picture{
+  width: 28vw;
+  height: 18.6vw;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.order-for-later {
+  border: 2px solid line;
+  width: 100px;
+  height: auto;
+}
+
+  </style>
+  <div style="position: relative; min-height: 100vh;"> 
+    <title>Device control - Foodbot</title>
+    <button type="button" onclick="window.location.href = '/editcontainers'" class="btn btn-primary btn-lg btn-block" onclick="window.location.replace('/devicecontrol')" id="edit-container"><%= translated[language]["edit_containers"] %></button>
+    
+    <div class="containerContent">
+      <div id="container-1"  class="containerWrapper" onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_1"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_1"]["type"]=="other") { %> <%= data["container_1"]["name"] %> <% } else {  %> <%= translated[language][data["container_1"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 1</div>          
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div id="container-2" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_2"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_2"]["type"]=="other") { %> <%= data["container_2"]["name"] %> <% } else {  %> <%= translated[language][data["container_2"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 2</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div id="container-3" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_3"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"> <% if (data["container_3"]["type"]=="other") { %> <%= data["container_3"]["name"] %> <% } else {  %> <%= translated[language][data["container_3"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 3</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+
+      <div id="container-4" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_4"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_4"]["type"]=="other") { %> <%= data["container_4"]["name"] %> <% } else {  %> <%= translated[language][data["container_4"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 4</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div id="container-5"  class="containerWrapper" onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_5"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_5"]["type"]=="other") { %> <%= data["container_5"]["name"] %> <% } else {  %> <%= translated[language][data["container_5"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 5</div>          
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div id="container-6" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_6"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_6"]["type"]=="other") { %> <%= data["container_6"]["name"] %> <% } else {  %> <%= translated[language][data["container_6"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 6</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div id="container-7" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_7"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_7"]["type"]=="other") { %> <%= data["container_7"]["name"] %> <% } else {  %> <%= translated[language][data["container_7"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 7</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+
+      <div id="container-8" class="containerWrapper"  onclick="add_element(this.id);">
+        <div class="containerItem">
+          <div class="containerImage"> 
+            <img src="<%= data["container_8"]["image_path"] %>" alt="">
+          </div>
+          <div class="containerInfo">
+            <div class="container-name"><% if (data["container_8"]["type"]=="other") { %> <%= data["container_8"]["name"] %> <% } else {  %> <%= translated[language][data["container_8"]["name"]] %> <% } %></div>
+            <div class="container-number"><%= translated[language]["container"] %> 8</div>
+          </div>
+        </div>
+        <div class="showSandwich"><%= translated[language]["click_to_add"] %></div>
+      </div>
+
+      <div class="defaultElement">
+        <input class="default_sandwiches" type="button" onclick="sandwich_with_everything();" value="<%= translated[language]["sandwich_with_everything"] %>">
+        <input class="default_sandwiches" type="button" onclick="sandwich_without_sauces();" value="<%= translated[language]["sandwich_without_sauces"] %>">
+        <input class="default_sandwiches" type="button" onclick="sandwich_without_spices();" value="<%= translated[language]["sandwich_without_spices"] %>">
+        <input class="default_sandwiches" type="button" onclick="sandwich_without_sauces_and_spices();" value="<%= translated[language]["sandwich_without_sauces_and_spices"] %>">  
+      </div>
+ 
+      <div id="elements-place"></div>
+
+      
+     <div class="step">
+       <input class="command-buttons" type="button" id="back_step" onclick="back_step();" value="<%= translated[language]["one_step_back"] %>">
+       <input class="command-buttons" id="order_sandwich" type="button"  onclick="order_sandwich();" value="<%= translated[language]["make"] %>">
+        <div class="order-for-later">
+         <input class="command-buttons" id="order_for_later" type="button"  onclick="order_for_later();" value="<%= translated[language]["order_for_later"] %>">
+          <input type="time" name="time" id="time_input">
+        </div>
+      </div>
+
+
+  </div>
+
+  <div class="footer">
+    <%- include('footer.ejs') %>
+  </div>
+  </div>
+
+    <script>
+var steps = []
+var div = document.getElementById("elements-place");
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+} 
+function add_element(id)
+{
+  console.log(id);
+  let element = document.createElement("img");
+  element.id = "element-picture"
+
+  switch (id) {
+    case "container-1":
+      steps.push(1)
+      element.src = "<%= data['container_1']['layer_image_path'] %>"
+      break;
+      
+    case "container-2":
+      steps.push(2)
+      element.src = "<%= data['container_2']['layer_image_path'] %>"
+      break;
+      
+      case "container-3":
+        steps.push(3)
+        element.src = "<%= data['container_3']['layer_image_path'] %>"
+        break;
+        
+      case "container-4":
+        steps.push(4)
+        element.src = "<%= data['container_4']['layer_image_path'] %>"
+        break;
+    
+      case "container-5":
+        steps.push(5)
+        element.src = "<%= data['container_5']['layer_image_path'] %>"
+        break;
+      case "container-6":
+        steps.push(6)
+        element.src = "<%= data['container_6']['layer_image_path'] %>"
+        break;
+      case "container-7":
+        steps.push(7)
+        element.src = "<%= data['container_7']['layer_image_path'] %>"
+        break;
+
+      case "container-8":
+        steps.push(8)
+        element.src = "<%= data['container_8']['layer_image_path'] %>"
+        break;
+      
+      default:
+        break;
+        }
+            console.log(steps);
+            div.prepend(element)
+          }
+function back_step(){
+  if (steps.length>1){
+    steps.pop()
+    document.getElementById('elements-place').removeChild(document.getElementById('elements-place').getElementsByTagName('img')[0]);
+  }
+}
+
+function add_sandwich(steps) {
+  for (let i = 0; i < steps.length; i++) {
+    add_element(`container-${steps[i]}`)
+  }
+}
+
+function delate_sandwich(){
+  for (let i = 0; i < steps.length; i++) {
+    try {
+      document.getElementById('elements-place').removeChild(document.getElementById('elements-place').getElementsByTagName('img')[0]);  
+    } catch (error) {
+      console.error(error);
+    }
+    
+  }
+  steps=[]
+}
+function sandwich_with_everything() {
+  delate_sandwich();
+  newsteps = [1,2,3,4,5,6,7,8,1]
+  add_sandwich(newsteps);
+}
+function sandwich_without_sauces() {
+  delate_sandwich();
+  newsteps = [1,2,3,4,7,8,1]
+  add_sandwich(newsteps);
+}
+function sandwich_without_spices() {
+  delate_sandwich();
+  newsteps = [1,2,3,4,5,6,1]
+  add_sandwich(newsteps);
+}
+function sandwich_without_sauces_and_spices() {
+  delate_sandwich();
+  newsteps = [1,2,3,4,1]
+  add_sandwich(newsteps);
+}
+
+function order_sandwich() {
+  ordered_steps = ""
+  for (let i = 0; i < steps.length; i++) {
+    ordered_steps += steps[i]
+  }
+  console.log(ordered_steps);
+  window.location.replace(`/ordersandwich/${ordered_steps}/now`);
+}
+
+function order_for_later() {
+  let selected_time = document.getElementById("time_input").value
+  let selected_time_list = selected_time.split(":")
+  let ts = Date.now()
+  let date_ob = new Date(ts);
+  let hours = date_ob.getHours();
+  let minutes = date_ob.getMinutes();
+  let stayed_hours = selected_time_list[0] - hours
+  let stayed_minutes = selected_time_list[1] - minutes
+  ordered_steps = ""
+  let stayed_minutes_to_start = stayed_hours*60 + stayed_minutes
+  for (let i = 0; i < steps.length; i++) {
+    ordered_steps += steps[i]
+  }
+  if (stayed_minutes_to_start > 0){
+    window.location.replace(`/ordersandwich/${ordered_steps}/${stayed_minutes_to_start}`);
+  }
+}
+
+
+
+
+add_element("container-1")
+    </script>
+

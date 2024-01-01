@@ -1,0 +1,15 @@
+
+{
+	"password" : "b8de2021fa3ebf710dc7c0af76f2e66d",
+	"type" : "sandwich",
+	"status" : "not working",
+	"container_1" : {"name" : "bread" , "image_path" : "images/sandwich/bread.png", "layer_image_path" : "images/sandwichlayers/bread.png"},
+	"container_2" : {"name" : "tomato", "image_path" : "images/sandwich/tomato.png", "layer_image_path" : "images/sandwichlayers/tomato.png"},
+	"container_3" : {"name" : "cucumber", "image_path" : "images/sandwich/cucumber.png", "layer_image_path" : "images/sandwichlayers/cucumber.png"},
+	"container_4" : {"name" : "sausage", "image_path" : "images/sandwich/sausage.png", "layer_image_path" : "images/sandwichlayers/sausage.png"},
+	"container_5" : {"name" : "ketchup", "image_path" : "images/sandwich/ketchup.png", "layer_image_path" : "images/sandwichlayers/ketchup.png"},
+	"container_6" : {"name" : "mayonnaise", "image_path" : "images/sandwich/mayonnaise.png", "layer_image_path" : "images/sandwichlayers/mayonnaise.png"},
+	"container_7" : {"name" : "salt", "image_path" : "images/sandwich/salt.png", "layer_image_path" : "images/sandwichlayers/salt.png"},
+	"container_8" : {"name" : "pepper", "image_path" : "images/sandwich/pepper.png", "layer_image_path" : "images/sandwichlayers/pepper.png"}
+}
+	

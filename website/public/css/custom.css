@@ -1,0 +1,267 @@
+@import url(omnes-pro.css);
+@import url(http://fonts.googleapis.com/css?family=Coda);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600);
+
+/*======================================================================================================
+                            Global
+=======================================================================================================*/
+
+* {
+    outline: none !important;
+    box-shadow: none;
+}
+
+a {
+    color: rgb(32, 178, 170);
+}
+
+a:hover {
+    color: #000;
+}
+
+.btn {
+    border-radius: 0;
+    transition: background 0.5s cubic-bezier(.17,.67,.83,.67);
+}
+
+.navbar-white {
+    background-color: #fff !important;
+    transition: background 0.5s ease-out;
+
+}
+
+.navbar-white li a {
+    color: #16a085 !important;
+}
+
+.navbar-white .navbar-brand {
+    color: #16a085 !important;
+}
+
+.navbar-white button.navbar-toggle {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.navbar-white button.navbar-toggle .ion-navicon {
+    color: #000;
+}
+
+.form-control:focus {
+border-color: #3acab1;
+box-shadow: none;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: rgba(221, 221, 221, 0);
+    margin: 0;
+    line-height: 100%;
+}
+
+.navbar-toggle {
+    padding: 0;
+    border-radius: 0;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    padding: 10px 5px;
+    min-height: 0;
+}
+
+button.navbar-toggle .ion-navicon {
+    font-size: 2em;
+    color: #fff;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    line-height: 31px;
+}
+
+.row
+{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+ul li
+{
+    list-style: none;
+    display: inline-block;
+}
+li a
+{
+    text-decoration: none;
+}
+#heading-text 
+{
+    padding-top: 10px;
+}
+#heading-text h3 {
+    font-size: 49px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 58px;
+    text-transform: uppercase;
+}
+
+#heading-text p {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 0px
+}
+
+.main_content 
+{
+    padding: 50px 0px;
+}
+
+iframe
+{
+    width: 100%;
+}
+.form-control
+{
+    border-radius: 0px;
+}
+/*-----------------------------------------------------------------------------------------------------
+                                navbar
+-------------------------------------------------------------------------------------------------------*/
+#navigation, .navbar-default
+{
+    border-radius: 0px;
+    border: 0;
+    background-color: rgba(0,0,0,0.19);
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 16px;
+    transition: all 0.5s cubic-bezier(.17,.67,.83,.67);
+    color: #E5E5E5;
+    margin: 5px 20px;
+    padding: 0;
+    line-height: 28px;
+    font-family: "Coda";
+    text-transform: capitalize;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+{
+    color: #fff;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-family: "Coda";  
+    padding: 5px 15px;  
+    font-size: 26px;  
+    line-height: 100%;  
+    height: auto;
+}
+
+.nav-wrap 
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+#wrapper
+{
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+#overlay-1
+{
+    background-color: rgba(40, 40, 40, 0.6);
+    position: relative;
+}
+
+.starting-text
+{
+    padding: 177px 0px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 2px;
+}
+.rene {
+    font-size: 120px;
+    color: white;
+    font-family: "omnes-pro", "Helvetica", sans-serif;
+    font-weight: 300;
+    margin-top: 75px;
+}
+
+.starting-text h2 {
+    font-family: "omnes-pro", "Helvetica", sans-serif;
+    color: #fff;
+}
+
+.bottom 
+{
+    width: 100%;
+    position: absolute;
+    bottom: 2%;
+}
+.bottom a
+{
+    color: rgba(192, 192, 192, 0.5);
+}
+h5 
+{
+    padding-top: 22px;
+    font-size: 18px;
+}
+/*-----------------------------------------------------------------------------------------------------
+                            about us
+------------------------------------------------------------------------------------------------------*/
+.exp
+{
+    padding-top: 76px;
+}
+.progress
+{
+    background-color: #d4e3e4;
+    border-radius: 0px;
+    border-color: lightseagreen;
+}
+.progress-bar
+{
+    background-color: cadetblue;
+}
+.pro
+{
+    padding-top: 10px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------
+                                    FOOTER
+-----------------------------------------------------------------------------------------------------*/
+.main-footer
+{
+    background-color: rgba(26, 26, 26, 1);
+    padding: 20px 0px;
+}
+.logo h1
+{
+    color: #F2F2F2;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+}

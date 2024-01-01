@@ -1,0 +1,137 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html lang=<%=language %>>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link rel="icon" href="images/logo.png">
+
+
+  <style>
+    body {
+      /* background-image: url('/images/home_background_image.jpg');
+            background-position: center;    
+            background-size: cover; */
+    }
+
+    #navbar {
+      background-color: #303841 !important;
+    }
+
+    #navbar-logo-name {
+      color: white;
+      font-weight: bold;
+      font-size: 24px !important;
+      letter-spacing: 3px;
+    }
+
+    #navbar-logo-name:hover {
+      color: rgb(228, 217, 217);
+    }
+
+    #hamburger-button{
+      background-color: white;
+    }
+
+    #navbar-home-text,
+    #navbar-aboutus-text,
+    #navbar-products-text,
+    #navbar-login-text,
+    #navbar-devicecontrol-text {
+      color: white;
+      font-size: 18px !important;
+      font-weight: 500 !important;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+
+    #navbar-home-text:hover,
+    #navbar-aboutus-text:hover,
+    #navbar-products-text:hover,
+    #navbar-login-text:hover,
+    #navbar-devicecontrol-text:hover {
+      color: #00adb5;
+    }
+    .selectpicker{
+      background-color: #303841;
+      font-size: 1.5em;
+      border: 0px;
+      margin-top: 8%;
+      border-radius: 15px;
+    }
+    .selectpicker:focus{
+      background-color: #2f2a33;
+      border: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">   
+      <a class="navbar-brand" href="/" id="navbar-logo-name">Foodbot</a>
+      <button id="hamburger-button" class="navbar-toggler toggler-example purple darken-3" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+        <div class="navbar-nav ml-auto">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-item nav-link active" id="navbar-home-text" href="/home"><%= translated[language]["home"] %><span
+                  class="sr-only">(current)</span></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="/aboutus" id="navbar-aboutus-text"><%= translated[language]["about_project"] %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="/products" id="navbar-products-text"><%= translated[language]["products"] %></a>
+            </li>
+            <li class="nav-item">
+              <% if(uorp===true){ %>
+                <a class="nav-item nav-link" href="/devicecontrol" id="navbar-devicecontrol-text"><%= translated[language]["device_control"] %></a>
+                <% } %>
+            </li>
+            <li class="nav-item">
+              <% if(uorp===true){ %>
+                <a class="nav-item nav-link" href="/logout" id="navbar-login-text"><%= translated[language]["logout"] %></a>
+                <% } else{ %>
+                  <a class="nav-item nav-link" href="/login" id="navbar-login-text"><%= translated[language]["login"] %></a>
+                  <% } %>
+            </li>
+            <li class="nav-item">
+              <select class="selectpicker" id="language-selector" data-width="fit" name="language" onchange="change_language(value);">
+                <option value="armenian" selected>🇦🇲</option>
+                <option value="english" <% if(language=='en') { %> selected <% } %>>🇺🇸</option>
+                <option value="russian" <% if(language=='ru') { %> selected <% } %>>🇷🇺</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        </div>
+  </nav>
+  <script>
+    function change_language(language) {
+      let data = { element: "barium" };
+      fetch(`/changelanguage/${language}`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(res => {
+        console.log("Request complete! response:", res);
+      });
+      location.reload()
+    }
+  </script>
